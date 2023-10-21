@@ -1,0 +1,33 @@
+.footer_container {
+  background: #ebe7f6;
+}
+
+.footer_container__inner {
+  max-width: var(--main-maxwidth);
+  min-height: 10rem;
+  margin: auto;
+  padding: 8rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.company_name_wrapper {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 850px) {
+  .footer_container__inner {
+    height: 6.4rem;
+  }
+}
+
+@media (max-width: 675px) {
+  .company_name_wrapper {
+    font-size: 2rem;
+  }
+}

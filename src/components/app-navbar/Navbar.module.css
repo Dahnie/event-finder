@@ -1,0 +1,57 @@
+.app_navbar_container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 40;
+  background: white;
+  box-shadow: 0px 2px 40px 0px rgba(95, 92, 112, 0.12);
+  z-index: 20;
+}
+
+.app_navbar_container_inner {
+  max-width: var(--main-maxwidth);
+  margin: auto;
+  height: 8rem;
+  margin: auto;
+  padding: 0 1.6rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 2rem;
+}
+
+/* LEFT */
+.company_name_wrapper {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* RIGHT SECTION */
+.find_event_button_wrapper button {
+  width: 18rem;
+  height: 4.5rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 850px) {
+  .app_navbar_container_inner {
+    height: 6.4rem;
+  }
+}
+
+@media (max-width: 675px) {
+  .company_name_wrapper {
+    font-size: 1.6rem;
+  }
+
+  .find_event_button_wrapper button {
+    width: 13rem;
+    height: 3.6rem;
+    font-size: 1.4rem;
+  }
+}

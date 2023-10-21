@@ -1,42 +1,133 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@font-face {
+  /* 300 */
+  font-family: clash-display;
+  font-weight: 300;
+  src: url(./assets/fonts/ClashDisplay-Light.woff);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* 400 */
+@font-face {
+  font-family: clash-display;
+  font-weight: 400;
+  src: url(./assets/fonts/ClashDisplay-Regular.woff);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@font-face {
+  /* 500 */
+  font-family: clash-display;
+  font-weight: 500;
+  src: url(./assets/fonts/ClashDisplay-Medium.woff);
+}
+
+@font-face {
+  /* 600 */
+  font-family: clash-display;
+  font-weight: 600;
+  src: url(./assets/fonts/ClashDisplay-Semibold.woff);
+}
+
+@font-face {
+  /* 700 */
+  font-family: clash-display;
+  font-weight: 700;
+  src: url(./assets/fonts/ClashDisplay-Bold.woff);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: "clash-display";
+  /* background-color: #1b1d1d;
+  color: #d9d9d9; */
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: "Athletics", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+select {
+  /* For Firefox */
+  -webkit-appearance: none;
+  /* for Chrome */
+  -moz-appearance: none;
+  appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/* APP */
+.app--row-container {
+  max-width: var(--main-maxwidth);
+  margin: auto;
+  padding: 0 20px;
+}
+
+/*  */
+.form-group {
+  position: relative;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Rotate Icon Classes */
+.rotate-up-180deg {
+  transform: rotate(-180deg);
+  transition: transform 0.15s ease-in-out;
+}
+
+.rotate-down-180deg {
+  transition: transform 0.15s ease-in-out;
+}
+
+/* Message handler wrapper */
+.app--actions-handler-wrapper {
+  top: 0px !important;
+  right: 30px !important;
+}
+
+/* Media Queries */
+@media (min-width: 1400px) {
+  :root {
+    --main-maxwidth: 1360px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 675px) {
+  .app--row-container {
+    padding: 0 16px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

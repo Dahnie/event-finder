@@ -1,0 +1,21 @@
+/* App Container */
+.app_container {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.app_container__inner {
+  position: relative;
+  margin-top: 8rem;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+/* Media Queries */
+@media (max-width: 850px) {
+  .app_container__inner {
+    margin-top: 6.4rem;
+  }
+}
