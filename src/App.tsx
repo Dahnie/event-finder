@@ -1,4 +1,7 @@
 import "./App.css";
+import "./assets/styles/Modals.css";
+import "./assets/styles/Input.css";
+import "./assets/styles/bootstrap-css/bootstrap.min.css?v=1";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Events from "./pages/events/Events";

@@ -22,3 +22,4 @@ export interface ErrorHandlerType {
   message: string;
 }
 export type SetIsLoadingType = React.Dispatch<React.SetStateAction<boolean>>;
+export type SetStateForBoolean = React.Dispatch<React.SetStateAction<boolean>>;

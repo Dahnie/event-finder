@@ -1,0 +1,47 @@
+.form-group input {
+  height: 4.8rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #0e35bd;
+  /* text styles  */
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #858585;
+  padding: 0 14px;
+}
+
+.form-group textarea {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border: 2px solid #0e35bd;
+  outline: none;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: -0.01em;
+  color: #000;
+  margin-bottom: 0.2rem;
+}
+
+.form-group img {
+  position: absolute;
+  height: 1.8rem;
+  right: 2rem;
+  bottom: 1.6rem;
+  cursor: pointer;
+}

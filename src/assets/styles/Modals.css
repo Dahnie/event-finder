@@ -1,0 +1,44 @@
+/* Custom */
+.modal__container.modal-dialog {
+  max-width: 70rem !important;
+  width: 100%;
+}
+
+.modal__container .modal-content {
+  min-height: 5.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 6px;
+  border: none;
+  overflow: hidden;
+}
+
+/* Header Wrapper */
+.modal__header_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__header_title {
+  color: var(--product-black, #1a0404);
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 20px; /* 83.333% */
+}
+
+.modal__cancel_btn_wrapper button {
+  border: none;
+  background-color: inherit;
+}
+
+/* Media Queries */
+@media (max-width: 575px) {
+  .modal__container .modal-content {
+    min-height: 20.2rem;
+    border-radius: 16px;
+  }
+}

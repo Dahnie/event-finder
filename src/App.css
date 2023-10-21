@@ -45,7 +45,7 @@ html {
 body {
   margin: 0;
   font-size: 1.6rem;
-  font-family: "clash-display";
+  font-family: "clash-display", sans-serif;
   /* background-color: #1b1d1d;
   color: #d9d9d9; */
 }
@@ -54,7 +54,7 @@ input,
 textarea,
 select,
 button {
-  font-family: "clash-display";
+  font-family: "clash-display", sans-serif;
 }
 
 button {

@@ -1,8 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useContext } from "react";
 import PrimaryButton from "../buttons/primary-button/PrimaryButton";
+import {
+  ISearchModalContextType,
+  SearchModalContext,
+} from "../contexts/search-modal-context/SearchModalContext";
 import styles from "./Navbar.module.css";
 import { useNavigate } from "react-router";
 
 function Navbar() {
+  // Functions, States and Variables
+  const { setIsModalOpened }: ISearchModalContextType | any =
+    useContext(SearchModalContext);
   const navigate = useNavigate();
   return (
     <header className={`${styles.app_navbar_container}`}>
@@ -23,7 +32,7 @@ function Navbar() {
           <PrimaryButton
             placeholder="Find Events"
             className={styles.find_event_button_wrapper}
-            onClick={() => navigate("/events")}
+            onClick={() => setIsModalOpened(true)}
           />
         </div>
       </div>

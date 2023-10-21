@@ -1,0 +1,71 @@
+.cancel_button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.modal_boy_container {
+  display: flex;
+}
+
+.left_hero_img_container {
+  position: relative;
+  height: 36rem;
+  width: 40%;
+}
+
+/* Left */
+.left_hero_img_container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Right */
+.form_section {
+  width: 60%;
+  padding: 5.6rem 1.2rem 1rem;
+}
+
+.primary_description_text {
+  color: #2e2e2e;
+  font-weight: 600;
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+.secondary_description_text {
+  font-weight: 500;
+  font-size: 1.8rem;
+  padding: 0.8rem 0;
+  margin: 0;
+}
+
+.form_section form {
+  margin-top: 1.8rem;
+}
+
+.cta_button_wrapper {
+  margin-top: 1.6rem;
+}
+
+/* Media Queries */
+@media (max-width: 675px) {
+  .left_hero_img_container {
+    height: 35rem;
+    width: 20%;
+  }
+
+  .form_section {
+    width: 80%;
+    padding: 5.6rem 1.2rem 0.4rem;
+  }
+
+  .primary_description_text {
+    font-size: 1.7rem;
+  }
+
+  .secondary_description_text {
+    font-size: 1.4rem;
+  }
+}

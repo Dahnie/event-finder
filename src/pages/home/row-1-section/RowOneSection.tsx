@@ -1,9 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styles from "./RowOneSection.module.css";
 import heroImg from "../../../assets/images/hero-img-1.webp";
 import PrimaryButton from "../../../components/buttons/primary-button/PrimaryButton";
+import { useContext } from "react";
+import {
+  ISearchModalContextType,
+  SearchModalContext,
+} from "../../../components/contexts/search-modal-context/SearchModalContext";
 
 function RowOneSection() {
   // Functions, States and Variables
+  const { setIsModalOpened }: ISearchModalContextType | any =
+    useContext(SearchModalContext);
+
   return (
     <section className={styles.home__row_one_section}>
       {/* Home Row Container */}
@@ -34,7 +43,9 @@ function RowOneSection() {
           <PrimaryButton
             placeholder="Get Started"
             className={styles.get_started_button_wrapper}
-            onClick={() => {}}
+            onClick={() => {
+              setIsModalOpened(true);
+            }}
           />
         </div>
 
