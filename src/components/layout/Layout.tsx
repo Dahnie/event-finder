@@ -11,8 +11,20 @@ interface IProps {
 function Layout({ children }: IProps) {
   return (
     <div className={styles.app_container}>
+      {/* Navbar */}
       <Navbar />
-      <div className={styles.app_container__inner}>{children}</div>
+      {/* App Inner Section  */}
+      <div className={styles.app_container__inner}>
+        {/* Modal */}
+        <UserInfoModal
+          isModalOpened={isModalOpened}
+          setIsModalOpened={setIsModalOpened}
+        />
+        {/* Main */}
+        {children}
+      </div>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

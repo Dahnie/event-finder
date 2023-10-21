@@ -1,7 +1,12 @@
 import React from "react";
+import RowOneSection from "./row-1-section/RowOneSection";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <main className="home-container">
+      <RowOneSection />
+    </main>
+  );
 }
 
 export default Home;

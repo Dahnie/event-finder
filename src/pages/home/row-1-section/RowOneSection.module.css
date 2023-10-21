@@ -1,0 +1,236 @@
+:root {
+  --hero-img-one-width: 53.2rem;
+  --hero-img-one-height: 58.8rem;
+}
+
+.home__row_one_section {
+  height: calc(100vh);
+  overflow: hidden;
+  background: #bfb3ff;
+  padding: 1.6rem 0 9rem;
+}
+
+.home__row_one_container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-column-gap: 4rem;
+  grid-row-gap: 3rem;
+  justify-content: space-between;
+}
+
+.home__row_one__left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10rem;
+}
+
+.company_name_wrapper {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  color: #0e35bd;
+}
+
+.company_aim_primary_text {
+  display: flex;
+  column-gap: 3rem;
+  margin: 1.2rem 0 0.4rem;
+}
+
+.company_aim_primary_text span {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 5.5rem;
+  line-height: 9rem;
+  color: #1a1a1a;
+}
+
+.company_aim_secondary_text {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  color: #3e3e3e;
+}
+
+.get_started_button_wrapper {
+  margin-top: 4rem;
+}
+
+.get_started_button_wrapper button {
+  width: 20rem !important;
+  height: 6rem !important;
+}
+
+/* RIGHT */
+.home__row_one__right {
+  width: 570px;
+  height: 588px;
+}
+
+.row_image_wrapper {
+  position: relative;
+}
+
+.row_image_wrapper::before {
+  content: "";
+  position: absolute;
+  width: var(--hero-img-one-width);
+  height: var(--hero-img-one-height);
+  left: 2.8rem;
+  top: 2.8rem;
+  background: #1a1a1a;
+  z-index: 2;
+}
+
+.row_image_wrapper__inner {
+  position: relative;
+  width: var(--hero-img-one-width);
+  height: var(--hero-img-one-height);
+  border: 2px solid #1a1a1a;
+  overflow: hidden;
+  z-index: 4;
+  background-color: #bfb3ff;
+}
+
+.row_image_wrapper__inner img {
+  position: absolute;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media Queries */
+@media (max-width: 1220px) {
+  :root {
+    --hero-img-one-width: 47.2rem;
+    --hero-img-one-height: 52.8rem;
+  }
+
+  .home__row_one_section {
+    padding: 1.6rem 0 7rem;
+  }
+
+  .home__row_one__left {
+    margin-top: 8rem;
+  }
+
+  .company_aim_primary_text {
+    margin: 1rem 0 0.4rem;
+  }
+
+  .company_aim_primary_text span {
+    font-size: 5rem;
+    line-height: 7rem;
+  }
+
+  .company_aim_primary_text {
+    column-gap: 2rem;
+  }
+
+  .row_image_wrapper::before {
+    left: 2.6rem;
+    top: 2.6rem;
+  }
+}
+
+@media (max-width: 1060px) {
+  .home__row_one_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .home__row_one_section {
+    padding: 1rem 0 7rem;
+  }
+
+  .home__row_one__left {
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .company_name_wrapper {
+    display: none;
+  }
+
+  .company_aim_secondary_text {
+    max-width: 50rem;
+    text-align: center;
+  }
+
+  .home__row_one__right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 675px) {
+  :root {
+    --hero-img-one-width: 32.5rem;
+    --hero-img-one-height: 35.9rem;
+  }
+
+  .home__row_one__right {
+    height: 100%;
+  }
+
+  .company_aim_primary_text {
+    column-gap: 2rem;
+  }
+
+  .company_aim_primary_text span {
+    font-size: 3.2rem;
+    line-height: 5.2rem;
+  }
+
+  .company_aim_secondary_text {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+  .get_started_button_wrapper {
+    margin-top: 3.2rem;
+  }
+
+  .get_started_button_wrapper button {
+    width: 23.6rem !important;
+    height: 4.8rem !important;
+  }
+
+  .row_image_wrapper::before {
+    left: 1.7rem;
+    top: 1.7rem;
+  }
+}
+
+@media (max-width: 370px) {
+  :root {
+    --hero-img-one-width: 27.5rem;
+    --hero-img-one-height: 33.9rem;
+  }
+
+  .row_image_wrapper::before {
+    left: 1.4rem;
+    top: 1.4rem;
+  }
+
+  .company_aim_primary_text {
+    column-gap: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  :root {
+    --hero-img-one-width: 25.5rem;
+    --hero-img-one-height: 31.9rem;
+  }
+
+  .row_image_wrapper::before {
+    left: 1.2rem;
+    top: 1.2rem;
+  }
+
+  .company_aim_primary_text {
+    column-gap: 0.6rem;
+  }
+}
