@@ -1,0 +1,48 @@
+.substitute-loading-spinner-wrapper {
+}
+
+.secondary-loader {
+  display: block;
+  width: 82px;
+  height: 18px;
+  position: relative;
+}
+
+.secondary-loader::before,
+.secondary-loader::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  top: 0;
+  background: #0e35bd;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: jump 0.5s ease-in infinite alternate;
+}
+
+.secondary-loader::after {
+  background: #0000;
+  color: #7b9cfe;
+  top: 100%;
+  box-shadow: 32px -20px, -32px -20px;
+  animation: split 0.5s ease-out infinite alternate;
+}
+
+@keyframes split {
+  0% {
+    box-shadow: 8px -20px, -8px -20px;
+  }
+  100% {
+    box-shadow: 32px -20px, -32px -20px;
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translate(-50%, -150%);
+  }
+  100% {
+    transform: translate(-50%, 10%);
+  }
+}

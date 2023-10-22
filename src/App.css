@@ -93,6 +93,12 @@ textarea {
   padding: 0 20px;
 }
 
+.page-title-wrapper {
+  color: rgb(33, 33, 33);
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
 /*  */
 .form-group {
   position: relative;
@@ -103,14 +109,10 @@ a {
   text-decoration: none;
 }
 
-/* Rotate Icon Classes */
-.rotate-up-180deg {
-  transform: rotate(-180deg);
-  transition: transform 0.15s ease-in-out;
-}
-
-.rotate-down-180deg {
-  transition: transform 0.15s ease-in-out;
+.below_table_loader_wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1.6rem 0 0;
 }
 
 /* Message handler wrapper */

@@ -1,0 +1,16 @@
+.events_top_section {
+  padding-top: 4rem;
+}
+
+.events_filter_container {
+  display: flex;
+  align-items: center;
+  column-gap: 3rem;
+  row-gap: 2.4rem;
+  margin-top: 1.6rem;
+}
+
+.events_filter_container select,
+.events_filter_container input {
+  width: 20rem !important;
+}

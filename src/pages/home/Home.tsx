@@ -1,4 +1,3 @@
-import React from "react";
 import RowOneSection from "./row-1-section/RowOneSection";
 
 function Home() {

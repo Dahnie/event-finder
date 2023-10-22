@@ -1,0 +1,219 @@
+.pagination-container {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination-container nav {
+  display: flex;
+  align-items: center;
+}
+
+.pagination__ {
+  display: flex;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.pagination__ li {
+  list-style-type: none;
+  margin: 0 5px;
+  height: max-content !important;
+}
+
+.pagination__ li:first-child {
+  margin-left: 0 !important;
+}
+
+.pagination__ li button {
+  width: 35px;
+  height: 35px;
+  background: inherit;
+  font-size: 15px;
+  color: #262626;
+  line-height: 18px;
+  text-align: center;
+  border: none;
+}
+
+.pagination__ li.active button {
+  background: #0e35bd;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.pagination-container .prev-button-wrapper button,
+.pagination-container .next-button-wrapper button {
+  width: 40px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: inherit;
+  border-radius: 8px;
+}
+
+.pagination-container .prev-button-wrapper button img,
+.pagination-container .next-button-wrapper button img {
+  height: 20px;
+}
+
+@media (max-width: 767px) {
+  li:first-child,
+  li.active,
+  li.active-sibling:nth-last-child(2),
+  li:last-child {
+    display: inline-block !important;
+  }
+  li:first-child:nth-last-child(n + 6) ~ li {
+    display: none;
+  }
+  li:first-child:nth-last-child(n + 6) ~ li:nth-last-child(-n + 3) {
+    display: inline-block;
+  }
+  li:first-child:nth-last-child(n + 6) ~ li:nth-last-child(3):before {
+    content: "\2026";
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 2.5px;
+    margin-left: 2.5px;
+  }
+  li:first-child:nth-last-child(n + 6).active:before,
+  li:first-child:nth-last-child(n + 6) ~ li.active:before {
+    content: "\2026";
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 2.5px;
+    margin-left: 2.5px;
+  }
+  li:first-child:nth-last-child(n + 6).active:after,
+  li:first-child:nth-last-child(n + 6) ~ li.active:after {
+    content: "\2026";
+    font-size: 24px;
+    display: inline-block;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+  li:first-child:nth-last-child(n + 6).active:nth-child(-n + 2):before,
+  li:first-child:nth-last-child(n + 6) ~ li.active:nth-child(-n + 2):before,
+  li:first-child:nth-last-child(n + 6).active:nth-last-child(-n + 2):before,
+  li:first-child:nth-last-child(n + 6)
+    ~ li.active:nth-last-child(-n + 2):before,
+  li:first-child:nth-last-child(n + 6).active:nth-child(-n + 2):after,
+  li:first-child:nth-last-child(n + 6) ~ li.active:nth-child(-n + 2):after,
+  li:first-child:nth-last-child(n + 6).active:nth-last-child(-n + 2):after,
+  li:first-child:nth-last-child(n + 6)
+    ~ li.active:nth-last-child(-n + 2):after {
+    display: none;
+  }
+  li:first-child:nth-last-child(n + 6).active ~ li:nth-last-child(-n + 3),
+  li:first-child:nth-last-child(n + 6) ~ li.active ~ li:nth-last-child(-n + 3) {
+    display: none;
+  }
+  li:first-child:nth-last-child(n + 6).active ~ li:nth-child(-n + 3),
+  li:first-child:nth-last-child(n + 6) ~ li.active ~ li:nth-child(-n + 3) {
+    display: inline-block;
+  }
+  li:first-child:nth-last-child(n + 6).active ~ li:nth-child(-n + 2):after,
+  li:first-child:nth-last-child(n + 6)
+    ~ li.active
+    ~ li:nth-child(-n + 2):after {
+    display: none;
+  }
+  li:first-child:nth-last-child(n + 6).active ~ li:nth-child(3):after,
+  li:first-child:nth-last-child(n + 6) ~ li.active ~ li:nth-child(3):after {
+    content: "\2026";
+    font-size: 24px;
+    display: inline-block;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+}
+
+@media (min-width: 768px) {
+  li:first-child,
+  li.active-sibling,
+  li.active,
+  li.active + li,
+  li:last-child {
+    display: flex !important;
+    align-items: center;
+  }
+  li:first-child:nth-last-child(n + 8) ~ li {
+    display: none;
+  }
+  li:first-child:nth-last-child(n + 8) ~ li.active-sibling:before {
+    content: "\2026";
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 2.5px;
+    margin-left: 2.5px;
+  }
+  li:first-child:nth-last-child(n + 8) ~ li.active + li:after {
+    content: "\2026";
+    font-size: 24px;
+    display: inline-block;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+  li:first-child:nth-last-child(n + 8) ~ li:nth-last-child(-n + 5) {
+    display: flex;
+    align-items: center;
+  }
+  li:first-child:nth-last-child(n + 8) ~ li:nth-last-child(5):before {
+    content: "\2026";
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 2.5px;
+    margin-left: 2.5px;
+  }
+  li:first-child:nth-last-child(n + 8) ~ li:nth-child(-n + 2):before,
+  li:first-child:nth-last-child(n + 8) ~ li:nth-last-child(-n + 2):before,
+  li:first-child:nth-last-child(n + 8)
+    ~ li.active-sibling:nth-last-child(-n + 4):before,
+  li:first-child:nth-last-child(n + 8) ~ li:nth-child(-n + 2):after,
+  li:first-child:nth-last-child(n + 8) ~ li:nth-last-child(-n + 2):after,
+  li:first-child:nth-last-child(n + 8)
+    ~ li.active-sibling:nth-last-child(-n + 4):after {
+    display: none !important;
+  }
+  li:first-child:nth-last-child(n + 8).active ~ li:nth-last-child(-n + 5),
+  li:first-child:nth-last-child(n + 8) ~ li.active ~ li:nth-last-child(-n + 5) {
+    display: none;
+  }
+  li:first-child:nth-last-child(n + 8).active
+    ~ li:nth-last-child(-n + 5):before,
+  li:first-child:nth-last-child(n + 8)
+    ~ li.active
+    ~ li:nth-last-child(-n + 5):before {
+    display: none;
+  }
+  li:first-child:nth-last-child(n + 8).active ~ li:nth-child(-n + 5),
+  li:first-child:nth-last-child(n + 8) ~ li.active ~ li:nth-child(-n + 5) {
+    display: flex;
+    align-items: center;
+  }
+  li:first-child:nth-last-child(n + 8).active ~ li:nth-child(-n + 4):after,
+  li:first-child:nth-last-child(n + 8)
+    ~ li.active
+    ~ li:nth-child(-n + 4):after {
+    display: none;
+  }
+  li:first-child:nth-last-child(n + 8).active ~ li:nth-child(5):after,
+  li:first-child:nth-last-child(n + 8) ~ li.active ~ li:nth-child(5):after {
+    content: "\2026";
+    font-size: 24px;
+    display: inline-block;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+  li:first-child:nth-last-child(n + 8).active:before,
+  li:first-child:nth-last-child(n + 8) ~ li.active:before,
+  li:first-child:nth-last-child(n + 8).active:after,
+  li:first-child:nth-last-child(n + 8) ~ li.active:after {
+    display: none;
+  }
+}

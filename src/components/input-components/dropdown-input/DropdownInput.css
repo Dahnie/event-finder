@@ -1,0 +1,51 @@
+.dropdown-form-group .select-dropdown-wrapper,
+.filter-date-form-group {
+  overflow: hidden;
+}
+
+.dropdown-form-group .select-dropdown-wrapper,
+.filter-date-form-group {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.dropdown-form-group select,
+.filter-date-form-group input {
+  position: relative;
+  width: 100%;
+  min-width: 15rem;
+  height: 4.8rem;
+  padding: 0 1.6rem;
+  border: 1px solid #0e35bd;
+  border-radius: 10px;
+  background-color: transparent;
+  z-index: 3;
+  /* text styles */
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 140%;
+  color: #707070;
+}
+
+.form-group .dropdown-icon img {
+  position: absolute;
+  height: 1.8rem;
+  bottom: 1.5rem;
+  right: 1.6rem;
+  z-index: 1;
+}
+
+.filter-date-form-group input:focus {
+  border: 2px solid #0e35bd;
+  outline: none;
+}
+
+.dropdown-form-group select:focus,
+.filter-date-form-group input:focus {
+  border: 2px solid #0e35bd;
+  outline: none;
+}
+
+.filter-date-form-group input::placeholder {
+  color: #707070;
+}
