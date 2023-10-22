@@ -3,6 +3,7 @@ import { IEventFilterParams } from "../../../Types";
 import DropdownInput from "../../../components/input-components/dropdown-input/DropdownInput";
 import FilterDateInput from "../../../components/input-components/filter-date-input/FilterDateInput";
 import { eventTypeOptions } from "../../../utils/dummyValues";
+import PrimaryButton from "../../../components/buttons/primary-button/PrimaryButton";
 
 // Interfaces
 interface IProps {
@@ -13,7 +14,6 @@ interface IProps {
 function EventsTopWrapper({ filterParameters, setFilterParameters }: IProps) {
   // Functions, States, Variables
 
-  //   States
   //   Functions
   //   Handles update of event filter parameter form
   const handleUpdateFilterFormInputStates = function (
@@ -26,6 +26,15 @@ function EventsTopWrapper({ filterParameters, setFilterParameters }: IProps) {
     };
     // Update filter params form state
     setFilterParameters(updatedFormInputStates);
+  };
+
+  // Handles reset of filter parameter states to default empty
+  const handleResetFilterParameters = function () {
+    setFilterParameters({
+      location: "",
+      date: "",
+      eventType: "",
+    });
   };
 
   return (
@@ -77,6 +86,13 @@ function EventsTopWrapper({ filterParameters, setFilterParameters }: IProps) {
             placeholder="Date"
           />
         </div>
+
+        {/* Reset Filter Button */}
+        <PrimaryButton
+          placeholder="Reset"
+          className={styles.reset_button_wrapper}
+          onClick={() => handleResetFilterParameters()}
+        />
       </div>
     </section>
   );

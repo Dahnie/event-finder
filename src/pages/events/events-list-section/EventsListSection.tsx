@@ -67,7 +67,6 @@ function EventsListSection({ filterParameters }: IProps) {
       })
       ?.filter((event: IEvent) => {
         // For Event Date
-        console.log(event.event_date, moment(dateParam).format("MM/DD/YYYY"));
         if (!dateParam) return event;
         return event.event_date === moment(dateParam).format("M/D/YYYY");
       });
@@ -79,16 +78,16 @@ function EventsListSection({ filterParameters }: IProps) {
     setCurrentEventsPosts(currentRows);
   };
 
-  // Fetch Admins
-  const handleFetchAdmins = function () {
+  // Fetch Events
+  const handleFetchEvents = function () {
     setErrorHandlerObj({ hasError: false, message: "" });
-    // dispatch(getAllAdmins(setIsLoading, setErrorHandlerObj));
+    // TODO Call the dispatch action which calls the API to fetch events based on the query params(latitude and longitude)
   };
 
   //   UseEffects
   useEffect(() => {
     // Fetch all events based on given latitude and longitude
-    handleFetchAdmins();
+    handleFetchEvents();
   }, []);
 
   useEffect(() => {

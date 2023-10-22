@@ -5,6 +5,7 @@
 .events_filter_container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   column-gap: 3rem;
   row-gap: 2.4rem;
   margin-top: 1.6rem;
@@ -13,4 +14,8 @@
 .events_filter_container select,
 .events_filter_container input {
   width: 20rem !important;
+}
+
+.reset_button_wrapper button {
+  width: 14rem;
 }
