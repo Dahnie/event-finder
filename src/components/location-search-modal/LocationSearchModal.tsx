@@ -1,12 +1,15 @@
 import { useState, MouseEvent } from "react";
-import { useNavigate } from "react-router-dom";
-import { Modal } from "reactstrap";
 import styles from "./LocationSearchModal.module.css";
+import { Modal } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 import { SetStateForBoolean } from "../../Types";
 import useDisplayMessage from "../../hooks/useDisplayMessage";
 import cancelIcon from "../../assets/images/svg/cancel.svg";
 import heroImg from "../../assets/images/location-img.webp";
 import PrimaryButton from "../buttons/primary-button/PrimaryButton";
+import { getLatitudeAndLongitudeFromAddress } from "../../redux/actions/locationActions";
+import { useAppDispatch } from "../../hook";
+import LoadingSpinner from "../loading-spinner/LoadingSpinner";
 
 // Interfaces
 interface IProps {
@@ -16,6 +19,7 @@ interface IProps {
 
 function LocationSearchModal({ isModalOpened, setIsModalOpened }: IProps) {
   // Functions, States and Variables
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const {
     // errorHandlerObj,
@@ -26,19 +30,22 @@ function LocationSearchModal({ isModalOpened, setIsModalOpened }: IProps) {
 
   // States
   const [location, setLocation] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   // Functions
   //   Handles Submits Locations
   const handleSubmitLocation = function (e: MouseEvent<HTMLButtonElement>) {
     if (location !== "") {
       e.preventDefault();
-
-      navigate("/events");
-      setIsModalOpened(false);
-
-      //   TODO Call a function that triggers google geocoding to get user's longitude and latitude based on address
-
-      //   TODO Which then in turn calls a 3rd party mock API to get events within that latitude and longitude
+      //   TODO Call a function that triggers google geocoding API to get user's longitude and latitude based on address
+      dispatch(
+        getLatitudeAndLongitudeFromAddress(
+          location,
+          setIsLoading,
+          setIsModalOpened,
+          navigate
+        )
+      );
     }
   };
 
@@ -102,11 +109,16 @@ function LocationSearchModal({ isModalOpened, setIsModalOpened }: IProps) {
             </div>
 
             {/* CTA Button */}
-            <PrimaryButton
-              placeholder="Search"
-              className={styles.cta_button_wrapper}
-              onClick={(e) => handleSubmitLocation(e)}
-            />
+            <div
+              className={`primary-button-container ${styles.cta_button_container}`}
+            >
+              <PrimaryButton
+                placeholder="Search"
+                className={styles.cta_button_wrapper}
+                onClick={(e) => handleSubmitLocation(e)}
+              />
+              {isLoading && <LoadingSpinner />}
+            </div>
           </form>
         </div>
       </div>

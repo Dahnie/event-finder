@@ -45,8 +45,9 @@ function EventBox({ event }: IProps) {
           <div className={styles.event_details}>
             <img src={timeIcon} alt="" />
             <span>
-              {moment(event.event_date).format("DD-MM-YYYY")}{" "}
-            </span> || <span> {event.event_time}</span>
+              {moment(event.event_date, "MM/DD/YYYY").format("DD-MM-YYYY")}{" "}
+            </span>{" "}
+            || <span> {event.event_time}</span>
           </div>
         </div>
       </div>

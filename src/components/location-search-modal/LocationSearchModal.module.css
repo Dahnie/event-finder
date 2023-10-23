@@ -45,8 +45,12 @@
   margin-top: 1.8rem;
 }
 
-.cta_button_wrapper {
+.cta_button_container {
   margin-top: 1.6rem;
+}
+
+.cta_button_wrapper {
+  width: 100%;
 }
 
 /* Media Queries */

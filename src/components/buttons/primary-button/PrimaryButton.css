@@ -1,8 +1,8 @@
 .primary-button-container {
+  width: 100%;
   display: flex;
   column-gap: 15px;
   align-items: center;
-  margin-top: 60px;
 }
 
 .primary-button-wrapper {

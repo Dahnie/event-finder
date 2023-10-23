@@ -17,6 +17,10 @@ interface IProps {
 
 function EventsListSection({ filterParameters }: IProps) {
   // Functions, States and Variables
+  // URL Search parameters for lat && lng
+  const queryParameters = new URLSearchParams(window.location.search);
+  const latitude = queryParameters.get("lat");
+  const longitude = queryParameters.get("lng");
   const {
     // errorHandlerObj,
     setErrorHandlerObj,
@@ -88,10 +92,12 @@ function EventsListSection({ filterParameters }: IProps) {
   useEffect(() => {
     // Fetch all events based on given latitude and longitude
     handleFetchEvents();
-  }, []);
+
+    if (!latitude && !longitude) setCurrentEventsPosts([]);
+  }, [latitude, longitude]);
 
   useEffect(() => {
-    if (events) handleFilterEvents();
+    if (events && latitude && longitude) handleFilterEvents();
   }, [filterParameters, currentPage]);
 
   useEffect(() => {
