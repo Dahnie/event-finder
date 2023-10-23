@@ -8,6 +8,8 @@ import {
   SearchModalContext,
 } from "../contexts/search-modal-context/SearchModalContext";
 import LocationSearchModal from "../location-search-modal/LocationSearchModal";
+import ErrorHandler from "../error-handler/ErrorHandler";
+import { ToastHandlerContext } from "../contexts/toast-handler-context/ToastHandlerContext";
 
 // Interfaces
 interface IProps {
@@ -18,6 +20,7 @@ function Layout({ children }: IProps) {
   // Functions, states and Variables
   const { isModalOpened, setIsModalOpened }: ISearchModalContextType | any =
     useContext(SearchModalContext);
+  const { errorHandlerObj }: any = useContext(ToastHandlerContext);
 
   return (
     <div className={styles.app_container}>
@@ -30,6 +33,12 @@ function Layout({ children }: IProps) {
         <LocationSearchModal
           isModalOpened={isModalOpened}
           setIsModalOpened={setIsModalOpened}
+        />
+
+        {/* Error handler component */}
+        <ErrorHandler
+          errorHandlerObj={errorHandlerObj}
+          className={"app--actions-handler-wrapper"}
         />
 
         {/* Main */}

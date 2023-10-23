@@ -6,7 +6,7 @@ export const handleAPIError = function (
   err: any,
   setErrorHandlerObj: SetErrorHandlerType
 ) {
-  //   Set the error handdler state
+  //  Set the error handdler state
   setErrorHandlerObj({
     hasError: true,
     message:

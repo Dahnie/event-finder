@@ -67,6 +67,7 @@
 .home__row_one__right {
   width: 570px;
   height: 588px;
+  margin-top: 2.8rem;
 }
 
 .row_image_wrapper {
@@ -168,6 +169,10 @@
   :root {
     --hero-img-one-width: 32.5rem;
     --hero-img-one-height: 35.9rem;
+  }
+
+  .home__row_one__left {
+    margin-top: 1rem;
   }
 
   .home__row_one__right {

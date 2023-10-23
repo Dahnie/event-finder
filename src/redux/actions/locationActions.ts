@@ -1,11 +1,10 @@
 import axios from "axios";
 import { NavigateFunction } from "react-router-dom";
 import isEmpty from "../../validation/isEmpty";
-import { SetStateForBoolean } from "../../Types";
+import { SetErrorHandlerType, SetStateForBoolean } from "../../Types";
+import { handleAPIError } from "../../utils/handleAPIError";
 
 const URL = `https://maps.googleapis.com/maps/api/geocode/json`;
-// Google API Key
-const API_KEY = "AIzaSyDIHPE9jxZqzQIIxsfq3Tw23BYma7d0x38";
 
 // Triggers Google API to get longitude and latitude from user's address
 export const getLatitudeAndLongitudeFromAddress =
@@ -13,6 +12,7 @@ export const getLatitudeAndLongitudeFromAddress =
     address: string,
     setIsLoading: SetStateForBoolean,
     setIsModalOpened: SetStateForBoolean,
+    setErrorHandlerObj: SetErrorHandlerType,
     navigate: NavigateFunction
   ) =>
   () => {
@@ -20,7 +20,7 @@ export const getLatitudeAndLongitudeFromAddress =
     setIsLoading(true);
     // API call
     axios
-      .get(`${URL}?address=${address}&key=${API_KEY}`)
+      .get(`${URL}?address=${address}&key=${import.meta.env.VITE_API_API_KEY}`)
       .then((response) => {
         const locationDetailsResponse = response.data.results;
 
@@ -37,7 +37,9 @@ export const getLatitudeAndLongitudeFromAddress =
         }
       })
       .catch((error) => {
-        console.error(error);
+        console.log(error);
+        // Handles API error
+        handleAPIError(error, setErrorHandlerObj);
       })
       .finally(() => {
         // trigger stop loading

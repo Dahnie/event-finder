@@ -1,15 +1,16 @@
-import { useState, MouseEvent } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState, MouseEvent, useContext } from "react";
 import styles from "./LocationSearchModal.module.css";
 import { Modal } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import { SetStateForBoolean } from "../../Types";
-import useDisplayMessage from "../../hooks/useDisplayMessage";
 import cancelIcon from "../../assets/images/svg/cancel.svg";
 import heroImg from "../../assets/images/location-img.webp";
 import PrimaryButton from "../buttons/primary-button/PrimaryButton";
 import { getLatitudeAndLongitudeFromAddress } from "../../redux/actions/locationActions";
 import { useAppDispatch } from "../../hook";
 import LoadingSpinner from "../loading-spinner/LoadingSpinner";
+import { ToastHandlerContext } from "../contexts/toast-handler-context/ToastHandlerContext";
 
 // Interfaces
 interface IProps {
@@ -21,12 +22,7 @@ function LocationSearchModal({ isModalOpened, setIsModalOpened }: IProps) {
   // Functions, States and Variables
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const {
-    // errorHandlerObj,
-    successHandlerObj,
-    // setErrorHandlerObj,
-    // setSuccessHandlerObj,
-  } = useDisplayMessage();
+  const { setErrorHandlerObj }: any = useContext(ToastHandlerContext);
 
   // States
   const [location, setLocation] = useState("");
@@ -43,6 +39,7 @@ function LocationSearchModal({ isModalOpened, setIsModalOpened }: IProps) {
           location,
           setIsLoading,
           setIsModalOpened,
+          setErrorHandlerObj,
           navigate
         )
       );
@@ -80,19 +77,13 @@ function LocationSearchModal({ isModalOpened, setIsModalOpened }: IProps) {
         {/* Right Wrapper || Form wrapper */}
         <div className={styles.form_section}>
           {/* Title */}
-          {!successHandlerObj.isSuccess && (
-            <>
-              <p className={styles.primary_description_text}>
-                Enter Your Location
-              </p>
+          <p className={styles.primary_description_text}>Enter Your Location</p>
 
-              {/* Secondary Text */}
-              <p className={styles.secondary_description_text}>
-                Help us find the best events near you! Simply type in your city
-                or address.
-              </p>
-            </>
-          )}
+          {/* Secondary Text */}
+          <p className={styles.secondary_description_text}>
+            Help us find the best events near you! Simply type in your city or
+            address.
+          </p>
 
           <form>
             {/* Location Textarea */}

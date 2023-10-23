@@ -117,8 +117,8 @@ a {
 
 /* Message handler wrapper */
 .app--actions-handler-wrapper {
-  top: 0px !important;
-  right: 30px !important;
+  top: 0 !important;
+  right: 1rem !important;
 }
 
 /* Media Queries */

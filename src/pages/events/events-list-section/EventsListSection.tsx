@@ -1,14 +1,15 @@
-import React, { Fragment, useEffect, useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import styles from "./EventsListSection.module.css";
 import { IEvent, IEventFilterParams } from "../../../Types";
 import FEPagination from "../../../components/fe-pagination/FEPagination";
 import isEmpty from "../../../validation/isEmpty";
 import { events } from "../../../utils/dummyValues";
 import moment from "moment";
-import useDisplayMessage from "../../../hooks/useDisplayMessage";
 import EventBox from "./event-box/EventBox";
 import NoDataFound from "../../../components/no-data-found/NoDataFound";
 import SubstituteLoadingSpinner from "../../../components/substitute-loading-spinner/SubstituteLoadingSpinner";
+import { ToastHandlerContext } from "../../../components/contexts/toast-handler-context/ToastHandlerContext";
 
 // Interfaces
 interface IProps {
@@ -17,16 +18,11 @@ interface IProps {
 
 function EventsListSection({ filterParameters }: IProps) {
   // Functions, States and Variables
+  const { setErrorHandlerObj }: any = useContext(ToastHandlerContext);
   // URL Search parameters for lat && lng
   const queryParameters = new URLSearchParams(window.location.search);
   const latitude = queryParameters.get("lat");
   const longitude = queryParameters.get("lng");
-  const {
-    // errorHandlerObj,
-    setErrorHandlerObj,
-    // setErrorHandlerObj,
-    // setSuccessHandlerObj,
-  } = useDisplayMessage();
   //   States
   const [allEvents, setAllEvents] = useState<IEvent[] | null>(null);
   const [currentEventsPosts, setCurrentEventsPosts] = useState<IEvent[] | null>(
