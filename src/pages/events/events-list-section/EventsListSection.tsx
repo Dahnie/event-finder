@@ -1,15 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./EventsListSection.module.css";
 import { IEvent, IEventFilterParams } from "../../../Types";
 import FEPagination from "../../../components/fe-pagination/FEPagination";
 import isEmpty from "../../../validation/isEmpty";
-import { events } from "../../../utils/dummyValues";
 import moment from "moment";
 import EventBox from "./event-box/EventBox";
 import NoDataFound from "../../../components/no-data-found/NoDataFound";
 import SubstituteLoadingSpinner from "../../../components/substitute-loading-spinner/SubstituteLoadingSpinner";
 import { ToastHandlerContext } from "../../../components/contexts/toast-handler-context/ToastHandlerContext";
+import { useAppDispatch, useAppSelector } from "../../../hook";
+import { getEventsBasedOnLocationDetails } from "../../../redux/actions/eventsActions";
 
 // Interfaces
 interface IProps {
@@ -18,6 +20,9 @@ interface IProps {
 
 function EventsListSection({ filterParameters }: IProps) {
   // Functions, States and Variables
+  const { events } = useAppSelector((state) => state.events);
+  const dispatch = useAppDispatch();
+  const location = useLocation();
   const { setErrorHandlerObj }: any = useContext(ToastHandlerContext);
   // URL Search parameters for lat && lng
   const queryParameters = new URLSearchParams(window.location.search);
@@ -28,11 +33,11 @@ function EventsListSection({ filterParameters }: IProps) {
   const [currentEventsPosts, setCurrentEventsPosts] = useState<IEvent[] | null>(
     null
   );
-  const [isLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   //   Pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [rowsPerPage] = useState(5);
+  const [rowsPerPage] = useState(8);
   const indexOfLastPost = currentPage * rowsPerPage;
   const indexOfFirstPost = indexOfLastPost - rowsPerPage;
 
@@ -81,20 +86,20 @@ function EventsListSection({ filterParameters }: IProps) {
   // Fetch Events
   const handleFetchEvents = function () {
     setErrorHandlerObj({ hasError: false, message: "" });
-    // TODO Call the dispatch action which calls the API to fetch events based on the query params(latitude and longitude)
+    // Call the dispatch action which calls the API to fetch events based on the query params(latitude and longitude)
+    dispatch(getEventsBasedOnLocationDetails(setIsLoading, setErrorHandlerObj));
   };
 
   //   UseEffects
   useEffect(() => {
     // Fetch all events based on given latitude and longitude
     handleFetchEvents();
-
     if (!latitude && !longitude) setCurrentEventsPosts([]);
-  }, [latitude, longitude]);
+  }, [location]);
 
   useEffect(() => {
     if (events && latitude && longitude) handleFilterEvents();
-  }, [filterParameters, currentPage]);
+  }, [events, filterParameters, currentPage]);
 
   useEffect(() => {
     setCurrentPage(1);

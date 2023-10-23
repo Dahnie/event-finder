@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { ErrorHandlerType, SuccessHandlerType } from "../Types";
 
 function useDisplayMessage() {
   // Functions, States and Variables
+  const location = useLocation();
   // States
   const [errorHandlerObj, setErrorHandlerObj] = useState<ErrorHandlerType>({
     hasError: false,
@@ -33,6 +35,12 @@ function useDisplayMessage() {
     if (successHandlerObj.isSuccess)
       setErrorHandlerObj({ hasError: false, message: "" });
   }, [successHandlerObj]);
+
+  useEffect(() => {
+    // Clear error state when page or location URL changes
+    setErrorHandlerObj({ hasError: false, message: "" });
+    setSuccessHandlerObj({ isSuccess: false, message: "" });
+  }, [location]);
 
   return {
     errorHandlerObj,

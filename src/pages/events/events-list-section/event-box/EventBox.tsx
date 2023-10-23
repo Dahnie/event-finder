@@ -1,6 +1,5 @@
 import styles from "../EventsListSection.module.css";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
 import { IEvent } from "../../../../Types";
 import { truncateString } from "../../../../utils/truncateString";
 import locationIcon from "../../../../assets/images/svg/location-icon.svg";
@@ -12,18 +11,14 @@ interface IProps {
 }
 function EventBox({ event }: IProps) {
   // Functions, States and Variables
-  const navigate = useNavigate();
   // Functions
-  const handleNavigateToProductInfo = function (event: IEvent) {
-    navigate(`/event/${event.event_id}`);
-  };
 
   return (
     <div
       className={`${styles.event_box_wrapper} 
       }`}
     >
-      <div onClick={() => handleNavigateToProductInfo(event)}>
+      <div>
         {/* Event Image */}
         <div className={styles.event_img}>
           <img src={event.event_image} alt="" />

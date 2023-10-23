@@ -12,6 +12,7 @@ export const handleAPIError = function (
     message:
       err?.response?.data?.detail ||
       err?.response?.data?.message ||
+      err?.response?.data?.error ||
       err?.response?.data ||
       err?.message ||
       "Something Went Wrong. Please Check your Connection and try again",
