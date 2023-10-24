@@ -1,5 +1,5 @@
 import { useState, ChangeEvent } from "react";
-import dropdownIcon from "../../../assets/images/svg/angle-down.svg";
+import calenderIcon from "../../../assets/images/svg/calender-icon.svg";
 
 // Interface
 interface IProps {
@@ -38,8 +38,8 @@ function FilterDateInput({
       />
 
       {dateFilterType === "text" && (
-        <div className="dropdown-icon">
-          <img src={dropdownIcon} alt="" />
+        <div className="calender-icon">
+          <img src={calenderIcon} alt="calender-icon" />
         </div>
       )}
     </div>

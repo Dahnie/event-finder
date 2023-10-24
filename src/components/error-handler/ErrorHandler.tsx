@@ -38,7 +38,7 @@ const ErrorHandler = function ({
 
             <div className={styles.cancel_error_button_wrrapper}>
               <button onClick={() => setShow(false)}>
-                <img src={cancelImg} alt="" />
+                <img src={cancelImg} alt="cancel-icon" />
               </button>
             </div>
           </div>

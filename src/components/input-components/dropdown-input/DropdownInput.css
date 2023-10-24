@@ -27,12 +27,17 @@
   color: #707070;
 }
 
-.form-group .dropdown-icon img {
+.form-group .dropdown-icon img,
+.form-group .calender-icon img {
   position: absolute;
   height: 1.8rem;
-  bottom: 1.5rem;
   right: 1.6rem;
   z-index: 1;
+}
+
+.form-group .calender-icon img {
+  height: 1.3rem;
+  bottom: 1.8rem;
 }
 
 .filter-date-form-group input:focus {

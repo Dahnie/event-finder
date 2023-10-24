@@ -47,7 +47,7 @@ const DropdownInput = ({
           ))}
         </select>
         <div className="dropdown-icon">
-          <img src={dropdownIcon} alt="" />
+          <img src={dropdownIcon} alt="dropdown-icon" />
         </div>
       </div>
     </>

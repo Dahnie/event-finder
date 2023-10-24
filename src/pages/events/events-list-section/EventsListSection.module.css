@@ -23,6 +23,17 @@
   overflow: hidden;
 }
 
+.event_type_box_wrapper {
+  position: absolute;
+  top: 1.1rem;
+  left: 1rem;
+  background-color: white;
+  padding: 0.4rem 1.4rem;
+  font-size: 1.3rem;
+  border-radius: 0.6rem;
+  font-weight: 400;
+}
+
 .event_img {
   position: relative;
   width: 100%;
@@ -62,7 +73,7 @@
   color: #555555;
 }
 
-.event_details span:nth-of-type(2) {
+.event_details span:nth-of-type(3) {
   font-size: 1.3rem;
 }
 

@@ -36,7 +36,7 @@ function FEPagination({
               }
             }}
           >
-            <img src={arrowLeftIcon} alt="" />
+            <img src={arrowLeftIcon} alt="arrow-left-icon" />
           </button>
         </div>
         <ul className="pagination__">
@@ -65,7 +65,7 @@ function FEPagination({
               }
             }}
           >
-            <img src={arrowRightIcon} alt="" />
+            <img src={arrowRightIcon} alt="arrow-right-icon" />
           </button>
         </div>
       </nav>

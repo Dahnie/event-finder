@@ -71,7 +71,7 @@ function LocationSearchModal({ isModalOpened, setIsModalOpened }: IProps) {
       <div className={styles.modal_boy_container}>
         {/* Left Wrapper || Hero Img */}
         <div className={styles.left_hero_img_container}>
-          <img src={heroImg} alt="" />
+          <img src={heroImg} alt="pinned-map-image" />
         </div>
 
         {/* Right Wrapper || Form wrapper */}

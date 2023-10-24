@@ -53,7 +53,7 @@ function RowOneSection() {
         <div className={styles.home__row_one__right}>
           <div className={styles.row_image_wrapper}>
             <div className={styles.row_image_wrapper__inner}>
-              <img src={heroImg} alt="" />
+              <img src={heroImg} alt="a lady smiling while viewing her phone" />
             </div>
           </div>
         </div>
