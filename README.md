@@ -6,15 +6,14 @@ Welcome to the Event Findr Web App! This application allows users to input their
 
 FEATURES
 
--Location Input Modal: Users can input their location by clicking either the "Get started" button on the homepage or the "Find events" button on the navbar.
--Google Geolocation API Integration: This converts user-provided location into precise latitude and longitude coordinates.
--Event Retrieval: Utilizing a mock API to fetch events based on the user's geographical coordinates(for now, the mock API is not directly linked with the user coordinates and is infact just dummy AI generated data fetched from an endpoint). Reference:https://www.mockaroo.com
--Event Display: Events are presented in boxes for easy viewing and interaction which are well paginated.
--Filtering Capabilities:
-
-1. Date: Users can filter events by date.
-2. Location: Events can be sorted by specific event addresses.
-3. Event Type: Users can narrow down events by type.
+1. Location Input Modal: Users can input their location by clicking either the "Get started" button on the homepage or the "Find events" button on the navbar.
+2. Google Geolocation API Integration: This converts user-provided location into precise latitude and longitude coordinates.
+3. Event Retrieval: Utilizing a mock API to fetch events based on the user's geographical coordinates(for now, the mock API is not directly linked with the user coordinates and is infact just dummy AI generated data fetched from an endpoint). Reference:https://www.mockaroo.com
+4. Event Display: Events are presented in boxes for easy viewing and interaction which are well paginated.
+5. Filtering Capabilities:
+   i. Date: Users can filter events by date.
+   ii. Location: Events can be sorted by specific event addresses.
+   iii. Event Type: Users can narrow down events by type.
 
 USAGE
 
@@ -34,11 +33,11 @@ USAGE
 
 TECHNOLOGIES USED
 
--React
--Typescript
--CSS Modules
--React Router
--Google Geolocation API
--Mock API
--Redux
--Context API
+1. React
+2. Typescript
+3. CSS Modules
+4. React Router
+5. Google Geolocation API
+6. Mock API
+7. Redux
+8. Context API
