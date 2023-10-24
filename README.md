@@ -41,3 +41,6 @@ TECHNOLOGIES USED
 6. Mock API
 7. Redux
 8. Context API
+
+DEPLOYMENT
+A deployed version of the web app can be accessed: https://event-findr.netlify.app/
