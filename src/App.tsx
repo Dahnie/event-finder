@@ -10,6 +10,7 @@ import SearchModalContextProvider from "./components/contexts/search-modal-conte
 import ToastHandlerProvider from "./components/contexts/toast-handler-context/ToastHandlerContext";
 import { Provider } from "react-redux";
 import store from "./store";
+import NotFound from "./pages/404/NotFound";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
                   <Route path="/home" element={<Home />} />
                   <Route path="/events" element={<Events />} />
                   <Route path="/event/:eventId" element={<Event />} />
+                  {/* Exception|404 Page */}
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </Layout>
             </Provider>

@@ -1,0 +1,28 @@
+.not_found_section {
+  background: #bfb3ff;
+  min-height: 100vh;
+}
+
+.not_found_container {
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4rem;
+}
+
+.text_404_wrapper {
+  font-size: 15vw;
+  font-weight: 500;
+}
+
+.not_found_primary_text {
+  color: rgb(0, 0, 0, 0.6);
+  font-weight: 400;
+  font-size: 3.5vw;
+  text-align: center;
+}
+
+.go_home_button_wrapper button {
+  width: 18rem;
+}
