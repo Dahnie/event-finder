@@ -34,8 +34,13 @@ export const getLatitudeAndLongitudeFromAddress =
           // Navigate to events passing in the latitude and longitude as query parameters
           navigate(`/events?lat=${latitude}&lng=${longitude}`);
         } else {
+          // FIX Added a fix for default longitude and latitude as google APIs are requesting billing details in which Nigerian card details don't work
+          const latitude = 6.5244,
+            longitude = 3.3792;
+          navigate(`/events?lat=${latitude}&lng=${longitude}`);
+          // ORIGINAL
           // This would be recognized as having no events data in the events page, the response being empty
-          navigate(`/events`);
+          // navigate(`/events`);
         }
       })
       .catch((error) => {
